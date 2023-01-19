@@ -133,7 +133,7 @@ img {
   letter-spacing: 0.02em;
   text-decoration: none;
 
-  transition-property: background-color;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -153,7 +153,7 @@ img {
   display: inline-block;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   width: 100%;
   height: 4px;
   background-color: #2196f3;
@@ -392,7 +392,7 @@ img {
   justify-content: center;
   align-items: center;
 
-  transition-property: background-color;
+  transition-property: background-color color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -446,7 +446,7 @@ img {
   justify-content: center;
   align-items: center;
 
-  transition-property: border;
+  transition-property: border color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -555,10 +555,6 @@ img {
   background-color: rgb(255, 255, 255, 10%);
   display: flex;
   align-items: center;
-
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-icon {
@@ -573,6 +569,10 @@ img {
   width: 100%;
   height: 100%;
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-soc-link:hover,
 .footer-soc-link:focus {
@@ -607,7 +607,7 @@ img {
   border-radius: 4px;
   border: transparent;
 
-  transition-property: background-color, color;
+  transition-property: background-color, color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -679,6 +679,10 @@ img {
   color: #ffffff;
   background-color: rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-cover-wrap {
@@ -701,6 +705,8 @@ img {
 
 .modal {
   position: absolute;
+  padding-left: 19px;
+  padding-right: 61px;
   left: 50%;
   top: 50%;
   width: 528px;
@@ -738,6 +744,67 @@ img {
   height: 18px;
 }
 
+.modal-title {
+  margin-top: 37px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+
+  color: #212121;
+}
+
+.modal-input {
+  margin-bottom: 10px;
+  padding-left: 32px;
+  width: 448px;
+  height: 40px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+
+.modal-input:hover {
+  border-color: #2196f3;
+}
+
+.modal-input:hover + .modal-icons {
+  fill: #2196f3;
+}
+
+.input-text {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+
+  color: #757575;
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input-message {
+  width: 448px;
+  height: 120px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: none;
+}
+
+.modal-icons {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -746,4 +813,67 @@ img {
 
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0);
+}
+
+.privacy-text {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  line-height: 1.71;
+  color: #757575;
+  display: flex;
+}
+
+.privacy-text span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 5px;
+  margin-left: 31px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  fill: transparent;
+}
+
+.modal-check:checked + .privacy-text span {
+  background-color: #2196f3;
+  border: none;
+  fill: #ffffff;
+}
+
+/* .privacy-text::before {
+  content: "";
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+
+.modal-check:checked + .privacy-text::before {
+  background-color: #2196f3;
+  border: none;
+  background-image: url(../images/vector.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+} */
+
+.modal-button {
+  display: block;
+  width: 200px;
+  height: 50px;
+  padding: 10px 52px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 4px;
+
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  background-color: #188ce8;
+  color: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
